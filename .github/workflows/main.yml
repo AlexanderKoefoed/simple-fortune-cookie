@@ -1,0 +1,22 @@
+name: Go webpage
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+env:
+  GIT_COMMIT: ${{ github.sha }}
+jobs:
+  Clone:
+    name: Clone repo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v2
+      - name: Upload repo for other jobs
+        uses: actions/upload-artifact@v2
+        with:
+          name: code
+          path: .
