@@ -1,0 +1,20 @@
+name: Dev
+on: 
+  push:
+    branches:
+      - dev/**
+jobs:
+   Clone:
+    name: Clone repo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v2
+      - name: Upload repo for other jobs
+        uses: actions/upload-artifact@v2
+        with:
+          name: code
+          path: .
+   Test:
+    name: Test script
+    runs-on: ubuntu-latest
