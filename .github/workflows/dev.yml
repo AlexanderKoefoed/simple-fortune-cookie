@@ -7,6 +7,7 @@ jobs:
    Clone:
     name: Clone repo
     runs-on: ubuntu-latest
+    container: golang:1.16-alpine
     steps:
       - name: Clone repo
         uses: actions/checkout@v2
