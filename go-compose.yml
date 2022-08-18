@@ -1,0 +1,14 @@
+version: "3"
+services:
+
+  frontend:
+    image: frontend
+    build: .
+    ports:
+    - 8080:8080
+  backend:
+    image: backend
+    build: .
+    ports:
+    - 6379:6379
+  
