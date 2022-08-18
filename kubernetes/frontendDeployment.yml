@@ -13,9 +13,7 @@ spec:
     spec:
       containers:
       - name: frontenddeployment
-        image: olexmeister/frontend:latest
+        image: olexmeister/frontend
         env:
           - name: BACKEND_DNS
-            value: backenddeployment
-          - name: BACKEND_PORT
-            value: "9000"
+            value: backendservice
