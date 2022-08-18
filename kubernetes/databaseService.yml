@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: databaseservice
+spec:
+  selector:
+    app: databasedeployment
+  ports:
+  - port: 6397
+    targetPort: 6397

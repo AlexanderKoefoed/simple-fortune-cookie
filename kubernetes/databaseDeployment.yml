@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: databaseDeployment
+  name: databasedeployment
 spec:
   selector:
     matchLabels:
-      app: databaseDeployment
+      app: databasedeployment
   template:
     metadata:
       labels:
-        app: databaseDeployment
+        app: databasedeployment
     spec:
       containers:
-      - name: databaseDeployment
+      - name: databasedeployment
         image: redis
