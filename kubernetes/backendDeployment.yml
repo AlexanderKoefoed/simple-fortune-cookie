@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backendDeployment
+spec:
+  selector:
+    matchLabels:
+      app: backendDeployment
+  template:
+    metadata:
+      labels:
+        app: backendDeployment
+    spec:
+      containers:
+      - name: backendDeployment
+        image: olexmeister/backend:latest
+        env:
+          - name: REDIS_DNS
+            value: databaseDeployment
+          - name: REDIS_PORT
+            value: "6379"
