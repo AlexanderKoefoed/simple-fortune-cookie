@@ -18,3 +18,11 @@ jobs:
    Test:
     name: Test script
     runs-on: ubuntu-latest
+    steps:
+      - name: Download repo
+        uses: actions/download-artifact@v2
+        with:
+          name: code
+          path: .
+      - name: Run frontend test
+        run: chmod +x ci/test.sh && ci/test.sh
