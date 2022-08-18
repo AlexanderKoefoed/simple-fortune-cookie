@@ -6,9 +6,13 @@ services:
     build: .
     ports:
     - 8080:8080
+    environment:
+        BACKEND_DNS: backend
+        BACKEND_PORT: 9000
+
   backend:
+    container_name: backend-container
     image: backend
     build: .
     ports:
-    - 6379:6379
-  
+    - 9000:9000
