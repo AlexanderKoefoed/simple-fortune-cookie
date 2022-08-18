@@ -12,7 +12,7 @@ env:
 jobs:
   Clone:
     name: Clone repo
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Clone repo
         uses: actions/checkout@v2
@@ -65,7 +65,7 @@ jobs:
           tags: olexmeister/backend:latest
   Compose:
     name: Serve app
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: Docker
     steps:
       - name: Run Docker compose
