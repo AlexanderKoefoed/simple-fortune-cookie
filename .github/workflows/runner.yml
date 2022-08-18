@@ -18,7 +18,6 @@ jobs:
   Docker:
     name: Docker app
     runs-on: ubuntu-latest
-    container: golang:1.16-alpine
     needs: Clone
     steps:
       - name: Download repo
