@@ -37,7 +37,7 @@ jobs:
           with:
             name: code
             path: .
-        - name: Run frontend test
+        - name: Run Availability test
           run: chmod +x ci/test-avail.sh && ci/test-avail.sh
 
     
