@@ -71,5 +71,3 @@ jobs:
           path: .
       - name: apply test environment
         run: chmod +x ci/k8s-dev.sh && ci/k8s-dev.sh
-      - name: Cleanup
-        run: kubectl delete -f kubernetes-dev/ && kubectl delete -f kubernetes-dev/redis/
