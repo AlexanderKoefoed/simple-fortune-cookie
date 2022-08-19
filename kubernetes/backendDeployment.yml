@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backenddeployment
-        image: olexmeister/backend:latest
+        image: olexmeister/backend:137850ff42f8fbef4c39d31cb5e4df0bc16a0d7b
         env:
           - name: REDIS_DNS
             value: databaseservice

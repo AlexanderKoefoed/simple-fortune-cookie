@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: test-backenddeployment
-        image: olexmeister/backend-dev:latest
+        image: olexmeister/backend-dev:c4d4a0b86918ab669639b98da3819c1f0c31499f
         env:
           - name: REDIS_DNS
             value: test-databaseservice
