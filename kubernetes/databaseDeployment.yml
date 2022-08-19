@@ -20,7 +20,7 @@ spec:
             claimName: redisvolumeclaim1
       containers:
       - name: redis
-        image: redis:alpine
+        image: redis:7.0
         volumeMounts:
-          - mountPath: "/data"
+          - mountPath: /data
             name: redis-volume
