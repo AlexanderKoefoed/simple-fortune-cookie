@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: test-backenddeployment
+  name: test-backenddeployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        app: test-backenddeployment
+  template:
+    metadata:
+      labels:
+        app: test-backenddeployment
+    spec:
+      containers:
+      - name: test-backenddeployment
+        image: olexmeister/backend-dev:latest
+        env:
+          - name: REDIS_DNS
+            value: test-databaseservice

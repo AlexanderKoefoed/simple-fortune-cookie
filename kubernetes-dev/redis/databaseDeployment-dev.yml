@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-databasedeployment
+  labels:
+    app: test-databasedeployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-databasedeployment
+  template:
+    metadata:
+      labels:
+        app: test-databasedeployment
+    spec:
+      volumes:
+      - name: redis-volume
+        persistentVolumeClaim:
+          claimName: pvc-redis
+      containers:
+      - image: redis:alpine
+        name: redis
+        volumeMounts:
+          - mountPath: /data
+            name: redis-volume
