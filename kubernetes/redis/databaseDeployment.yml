@@ -15,12 +15,12 @@ spec:
         app: databasedeployment
     spec:
       volumes:
-        - name: redis-volume
-          persistentVolumeClaim:
-            claimName: redisvolumeclaim1
+      - name: redis-volume
+        persistentVolumeClaim:
+          claimName: pvc-redis
       containers:
-      - name: redis
-        image: redis:7.0
+      - image: redis:alpine
+        name: redis
         volumeMounts:
           - mountPath: /data
             name: redis-volume

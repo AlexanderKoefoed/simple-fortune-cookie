@@ -2,7 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontenddeployment
+  labels:
+    app: frontenddeployment
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: frontenddeployment
@@ -13,7 +16,9 @@ spec:
     spec:
       containers:
       - name: frontenddeployment
-        image: olexmeister/frontend
+        image: olexmeister/frontend:d20c8d560d7f5ac5172e1a3000c7d29e5e3bd872
         env:
           - name: BACKEND_DNS
             value: backendservice
+          - name: BACKEND_PORT
+            value: "9000"

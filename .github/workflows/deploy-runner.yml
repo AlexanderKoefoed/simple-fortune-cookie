@@ -58,7 +58,7 @@ jobs:
           name: code
           path: .
       - name: Apply kubernetes manifest
-        run: kubectl apply -f kubernetes/
+        run: chmod +x ci/k8s.sh && ci/k8s.sh
 
 #Legacy config  
   #Compose:
