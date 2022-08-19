@@ -5,9 +5,10 @@ metadata:
     app: backenddeployment
   name: backenddeployment
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: backenddeployment
+        app: backenddeployment
   template:
     metadata:
       labels:
@@ -15,8 +16,7 @@ spec:
     spec:
       containers:
       - name: backenddeployment
-        image: olexmeister/backend
-        command: ["sleep", "30"]
+        image: olexmeister/backend:d20c8d560d7f5ac5172e1a3000c7d29e5e3bd872
         env:
           - name: REDIS_DNS
             value: databaseservice
