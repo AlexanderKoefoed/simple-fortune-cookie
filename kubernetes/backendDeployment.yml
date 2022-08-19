@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    app: backenddeployment
   name: backenddeployment
 spec:
   selector:
@@ -14,6 +16,7 @@ spec:
       containers:
       - name: backenddeployment
         image: olexmeister/backend
+        command: ["sleep", "30"]
         env:
           - name: REDIS_DNS
             value: databaseservice
