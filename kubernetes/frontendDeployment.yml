@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontenddeployment
-        image: olexmeister/frontend:d20c8d560d7f5ac5172e1a3000c7d29e5e3bd872
+        image: olexmeister/frontend:137850ff42f8fbef4c39d31cb5e4df0bc16a0d7b
         env:
           - name: BACKEND_DNS
             value: backendservice
