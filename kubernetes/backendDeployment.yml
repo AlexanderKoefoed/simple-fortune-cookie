@@ -16,6 +16,7 @@ spec:
       containers:
       - name: backenddeployment
         image: olexmeister/backend
+        command: ["sleep", "30"]
         env:
           - name: REDIS_DNS
             value: databaseservice
