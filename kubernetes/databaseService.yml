@@ -2,12 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: databasedeployment
+    app: databaseservice
   name: databaseservice
 spec:
   selector:
     app: databasedeployment
   type: ClusterIP
   ports:
-  - port: 6397
-    targetPort: 6397
+  - port: 6379  
+    targetPort: 6379
+    protocol: TCP

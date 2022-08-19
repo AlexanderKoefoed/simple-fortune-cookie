@@ -2,7 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: databasedeployment
+  labels:
+    app: databasedeployment
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: databasedeployment
@@ -11,6 +14,13 @@ spec:
       labels:
         app: databasedeployment
     spec:
+      volumes:
+        - name: redis-volume
+          persistentVolumeClaim:
+            claimName: redisvolumeclaim1
       containers:
-      - name: databasedeployment
-        image: redis
+      - name: redis
+        image: redis:7.0
+        volumeMounts:
+          - mountPath: /data
+            name: redis-volume
