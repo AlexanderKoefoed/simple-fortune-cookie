@@ -10,6 +10,4 @@ RUN go build
 
 EXPOSE 9000
 
-RUN sleep 30
-
 CMD ["go", "run", "backend"]
